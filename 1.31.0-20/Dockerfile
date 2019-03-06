@@ -20,7 +20,7 @@ RUN tar xzvf ${APP_TARFILE}
 RUN rm ${APP_TARFILE}
 
 RUN apt-get -qy update && \
-    apt-get install -qy openssl libstdc++6 && \
+    apt-get install -qy openssl ca-certificates libstdc++6 && \
     apt-get clean && apt-get autoclean
 
 EXPOSE ${APP_PORT}

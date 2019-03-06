@@ -19,8 +19,8 @@ WORKDIR ${APP_ROOT}
 RUN tar xzvf ${APP_TARFILE}
 RUN rm ${APP_TARFILE}
 
-RUN apt -qy update && \
-    apt install openssl
+RUN apt-get -qy update && \
+    apt-get install -qy openssl libstdc++6 && \
+    apt-get clean && apt autoclean
 
 ENTRYPOINT [ "/entrypoint.sh" ]
-CMD [ "--help" ]

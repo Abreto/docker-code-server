@@ -23,4 +23,6 @@ RUN apt-get -qy update && \
     apt-get install -qy openssl libstdc++6 && \
     apt-get clean && apt autoclean
 
+EXPOSE ${APP_PORT}
+
 ENTRYPOINT [ "/entrypoint.sh" ]

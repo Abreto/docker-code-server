@@ -18,8 +18,8 @@ RUN useradd \
     -md /code \
     -s /bin/bash \
     -U code
-RUN mkdir /data
-RUN chown code:code /data
+# RUN mkdir /data
+# RUN chown code:code /data
 USER code:code
 
 WORKDIR /bootstrap
@@ -28,6 +28,6 @@ COPY entrypoint.sh .
 WORKDIR /code
 
 # Presist data
-VOLUME /code /data
+VOLUME /code
 
 ENTRYPOINT ["bash", "/bootstrap/entrypoint.sh"]

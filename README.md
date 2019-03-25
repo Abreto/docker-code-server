@@ -8,3 +8,6 @@ $ docker run -dt \
     -h code-abreto-net \
     abreto/code-server
 ```
+
+## Remember
+Change `JDKVER` when needed.

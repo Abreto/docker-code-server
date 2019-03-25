@@ -5,14 +5,9 @@ LABEL maintainer="m@abreto.net"
 # Install required packages
 RUN apt-get update && apt-get -qy upgrade
 RUN apt-get install -qy \
-    build-essential \
+    build-essential default-jdk \
     htop wget curl
 RUN apt-get -qy -f install
-
-# Install jdk
-WORKDIR /downloads
-RUN wget http://download.oracle.com/otn-pub/java/jdk/11.0.2+9/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_linux-x64_bin.deb
-RUN dpkg -i jdk-11.0.2_linux-x64_bin.deb
 
 # Change to user code
 RUN useradd \

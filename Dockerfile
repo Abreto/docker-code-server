@@ -2,7 +2,6 @@ FROM codercom/code-server
 
 LABEL maintainer="m@abreto.net"
 
-
 # Install required packages
 RUN apt-get update && apt-get -qy upgrade
 RUN apt-get install -qy \
@@ -19,7 +18,6 @@ RUN mkdir /data
 RUN chown code:code /data
 USER code:code
 
-# Copy entrypoint.sh
 WORKDIR /bootstrap
 COPY entrypoint.sh .
 

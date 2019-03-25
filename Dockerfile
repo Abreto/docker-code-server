@@ -11,6 +11,10 @@ RUN apt-get install -qy \
 RUN apt-get -qy -f install
 
 # Change to user code
+RUN useradd \
+    -d /code \
+    -s /bin/bash \
+    -U code
 USER code:code
 
 # Copy entrypoint.sh

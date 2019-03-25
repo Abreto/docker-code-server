@@ -9,5 +9,8 @@ RUN apt-get install -qy \
     htop
 RUN apt-get -qy -f install
 
+# Presist data
+VOLUME [ "/data" ]
 VOLUME [ "/code" ]
+
 WORKDIR /code

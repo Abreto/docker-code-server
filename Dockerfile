@@ -10,7 +10,7 @@ RUN apt-get install -qy \
 RUN apt-get -qy -f install
 
 # Prepare environment variables
-ENV JDKVER=11
+RUN export JDKVER=$(expr substr $(java --version | grep "openjdk [0-9]" | awk '{print $2;}') 1 2)
 ENV JAVA_HOME="/usr/lib/jvm/java-${JDKVER}-openjdk-amd64/bin/"
 
 # Change to user code

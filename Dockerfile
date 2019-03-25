@@ -9,6 +9,10 @@ RUN apt-get install -qy \
     htop wget curl
 RUN apt-get -qy -f install
 
+# Prepare environment variables
+ENV JDKVER=11
+ENV JAVA_HOME="/usr/lib/jvm/java-${JDKVER}-openjdk-amd64/bin/"
+
 # Change to user code
 RUN useradd \
     -md /code \

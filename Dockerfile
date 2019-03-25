@@ -2,6 +2,7 @@ FROM codercom/code-server
 
 LABEL maintainer="m@abreto.net"
 
+
 # Install required packages
 RUN apt-get update && apt-get -qy upgrade
 RUN apt-get install -qy \
@@ -9,8 +10,14 @@ RUN apt-get install -qy \
     htop
 RUN apt-get -qy -f install
 
+# Copy entrypoint.sh
+WORKDIR /bootstrap
+COPY entrypoint.sh .
+
 # Presist data
 VOLUME [ "/data" ]
 VOLUME [ "/code" ]
 
 WORKDIR /code
+
+ENTRYPOINT ["bash", "/bootstrap/entrypoint.sh"]

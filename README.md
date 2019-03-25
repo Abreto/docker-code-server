@@ -14,4 +14,4 @@ $ docker run -dt -m 2g \
 ```
 
 ## Remember
-Change `JDKVER` when needed.
+* Change `JDKVER` when needed.

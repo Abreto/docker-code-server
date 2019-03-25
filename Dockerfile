@@ -5,9 +5,13 @@ LABEL maintainer="m@abreto.net"
 # Install required packages
 RUN apt-get update && apt-get -qy upgrade
 RUN apt-get install -qy \
-    build-essential \
-    htop
+    build-essential default-jdk \
+    htop wget curl
 RUN apt-get -qy -f install
+
+# Prepare environment variables
+ENV JDKVER=11
+ENV JAVA_HOME="/usr/lib/jvm/java-${JDKVER}-openjdk-amd64"
 
 # Change to user code
 RUN useradd \

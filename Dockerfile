@@ -10,6 +10,9 @@ RUN apt-get install -qy \
     htop
 RUN apt-get -qy -f install
 
+# Change to user code
+USER code:code
+
 # Copy entrypoint.sh
 WORKDIR /bootstrap
 COPY entrypoint.sh .

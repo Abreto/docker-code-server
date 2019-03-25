@@ -12,11 +12,11 @@ RUN apt-get -qy -f install
 
 # Change to user code
 RUN useradd \
-    -d /code \
+    -md /code \
     -s /bin/bash \
     -U code
-RUN mkdir /code /data
-RUN chown code:code /code && chown code:code /data
+RUN mkdir /data
+RUN chown code:code /data
 USER code:code
 
 # Copy entrypoint.sh

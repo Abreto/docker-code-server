@@ -7,6 +7,8 @@ RUN apt-get update && apt-get -qy upgrade
 RUN apt-get install -qy \
     build-essential default-jdk \
     htop wget curl
+RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
+RUN apt-get install -y nodejs
 RUN apt-get -qy -f install
 
 # Prepare environment variables
